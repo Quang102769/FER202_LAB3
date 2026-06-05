@@ -1,12 +1,8 @@
-import './App.css';
-
+import "./App.css";
+import QuizzApp from "./Lab3/QuizzApp";
 
 function App() {
-  return (
-   <>
-   </>
-   
-  );
+  return <QuizzApp />;
 }
 
 export default App;
