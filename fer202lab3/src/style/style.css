@@ -1,0 +1,87 @@
+/* Custom Premium Styles for Quiz App */
+
+body {
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+}
+
+.quiz-app-wrapper {
+  background: linear-gradient(135deg, #f6f8fd 0%, #f1f6f9 100%);
+}
+
+.quiz-card {
+  box-shadow: 0 1rem 3rem rgba(0,0,0,0.075) !important;
+  transition: transform 0.3s ease-in-out;
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(90deg, #4e73df 0%, #224abe 100%);
+}
+
+.option-btn {
+  border-width: 2px;
+  color: #5a5c69;
+  border-color: #e3e6f0;
+  background-color: white;
+}
+
+.option-btn:hover:not(:disabled) {
+  background-color: #f8f9fc;
+  border-color: #4e73df;
+  color: #4e73df;
+  transform: translateY(-2px);
+  box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.05);
+}
+
+.option-btn.btn-primary {
+  background: linear-gradient(90deg, #4e73df 0%, #36b9cc 100%);
+  border-color: transparent;
+  color: white;
+}
+
+.option-btn.btn-primary .option-marker {
+  border-color: white !important;
+}
+
+.disabled-opacity {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.scale-up {
+  animation: scaleUp 0.3s ease-out;
+}
+
+@keyframes scaleUp {
+  0% { transform: scale(0.98); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Circular Chart Animation */
+.circular-chart {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+  max-height: 250px;
+}
+.circle-bg {
+  fill: none;
+  stroke: #f1f6f9;
+  stroke-width: 2;
+}
+.circle {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}

@@ -49,25 +49,29 @@ function QuizzApp() {
 
   if (showScore) {
     return (
-      <Score
-        score={score}
-        totalQuestions={questions.length}
-        onRestart={restartQuiz}
-      />
+      <div className="quiz-app-wrapper container-fluid min-vh-100 d-flex align-items-center justify-content-center py-5">
+        <Score
+          score={score}
+          totalQuestions={questions.length}
+          onRestart={restartQuiz}
+        />
+      </div>
     );
   }
 
   const current = questions[currentQuestion];
 
   return (
-    <Question
-      question={current}
-      onAnswer={handleAnswer}
-      selectedOptionId={selectedOptionId}
-      disabled={isAnswered}
-      questionNumber={currentQuestion + 1}
-      totalQuestions={questions.length}
-    />
+    <div className="quiz-app-wrapper container-fluid min-vh-100 d-flex align-items-center justify-content-center py-5">
+      <Question
+        question={current}
+        onAnswer={handleAnswer}
+        selectedOptionId={selectedOptionId}
+        disabled={isAnswered}
+        questionNumber={currentQuestion + 1}
+        totalQuestions={questions.length}
+      />
+    </div>
   );
 }
 
