@@ -49,7 +49,7 @@ function QuizzApp() {
 
   if (showScore) {
     return (
-      <div className="quiz-app-wrapper container-fluid min-vh-100 d-flex align-items-center justify-content-center py-5">
+      <div className="bg-light container-fluid min-vh-100 d-flex align-items-center justify-content-center py-5">
         <Score
           score={score}
           totalQuestions={questions.length}
@@ -62,7 +62,7 @@ function QuizzApp() {
   const current = questions[currentQuestion];
 
   return (
-    <div className="quiz-app-wrapper container-fluid min-vh-100 d-flex align-items-center justify-content-center py-5">
+    <div className="bg-light container-fluid min-vh-100 d-flex align-items-center justify-content-center py-5">
       <Question
         question={current}
         onAnswer={handleAnswer}

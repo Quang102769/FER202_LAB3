@@ -9,7 +9,7 @@ function Question({
   const progressPercent = ((questionNumber - 1) / totalQuestions) * 100;
 
   return (
-    <div className="card shadow-lg quiz-card border-0 rounded-4" style={{ maxWidth: '600px', width: '100%' }}>
+    <div className="card shadow-lg border-0 rounded-4" style={{ maxWidth: '600px', width: '100%' }}>
       <div className="card-body p-5">
         <div className="d-flex justify-content-between align-items-center mb-4">
           <h5 className="text-muted fw-bold mb-0">Question {questionNumber} of {totalQuestions}</h5>
@@ -20,7 +20,7 @@ function Question({
         
         <div className="progress mb-4 rounded-pill" style={{ height: '8px' }}>
           <div 
-            className="progress-bar bg-gradient-primary rounded-pill" 
+            className="progress-bar bg-primary rounded-pill" 
             role="progressbar" 
             style={{ width: `${progressPercent}%`, transition: 'width 0.5s ease-in-out' }} 
             aria-valuenow={progressPercent} 
@@ -36,12 +36,12 @@ function Question({
         <div className="options d-flex flex-column gap-3">
           {question.options.map((option) => {
             const isSelected = selectedOptionId === option.id;
-            let btnClass = "btn btn-outline-primary btn-lg option-btn text-start rounded-3 position-relative overflow-hidden";
+            let btnClass = "btn btn-outline-primary btn-lg text-start rounded-3 position-relative overflow-hidden";
             
             if (isSelected) {
-              btnClass = "btn btn-primary btn-lg option-btn text-start rounded-3 shadow-sm position-relative overflow-hidden scale-up";
+              btnClass = "btn btn-primary btn-lg text-start rounded-3 shadow-sm position-relative overflow-hidden";
             } else if (disabled) {
-              btnClass += " disabled-opacity";
+              btnClass += " opacity-50";
             }
 
             return (

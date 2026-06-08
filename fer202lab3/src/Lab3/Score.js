@@ -15,27 +15,19 @@ function Score({ score, totalQuestions, onRestart }) {
       <div className="card-body">
         <h1 className="display-4 fw-bold mb-3 text-primary">Quiz Completed!</h1>
         
-        <div className="my-5 position-relative d-inline-block">
-          <svg viewBox="0 0 36 36" className="circular-chart primary" style={{ width: '150px', height: '150px' }}>
-            <path
-              className="circle-bg"
-              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-              fill="none"
-              stroke="#eee"
-              strokeWidth="3"
-            />
-            <path
-              className="circle"
-              strokeDasharray={`${percentage}, 100`}
-              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-              fill="none"
-              stroke="#4e73df"
-              strokeWidth="3"
-              style={{ animation: 'progress 1s ease-out forwards' }}
-            />
-          </svg>
-          <div className="position-absolute top-50 start-50 translate-middle">
-            <span className="fs-2 fw-bold">{score}/{totalQuestions}</span>
+        <div className="my-5">
+          <h2 className="display-1 fw-bold text-primary mb-4">{score}/{totalQuestions}</h2>
+          <div className="progress" style={{ height: '30px' }}>
+            <div 
+              className="progress-bar progress-bar-striped progress-bar-animated bg-primary fs-5" 
+              role="progressbar" 
+              style={{ width: `${percentage}%` }} 
+              aria-valuenow={percentage} 
+              aria-valuemin="0" 
+              aria-valuemax="100"
+            >
+              {percentage}%
+            </div>
           </div>
         </div>
 
@@ -46,9 +38,8 @@ function Score({ score, totalQuestions, onRestart }) {
 
         <button 
           type="button" 
-          className="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-bold shadow-sm hover-scale"
+          className="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-bold shadow-sm"
           onClick={onRestart}
-          style={{ transition: 'transform 0.2s' }}
         >
           <i className="bi bi-arrow-clockwise me-2"></i> Play Again
         </button>
